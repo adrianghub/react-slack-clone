@@ -4,11 +4,12 @@ import { useParams } from 'react-router-dom';
 import StarBorderIcon from '@material-ui/icons/StarBorder';
 import InfoOutlinedIcon from '@material-ui/icons/InfoOutlined';
 import db from '../../firebase';
+import Message from '../Message/Message';
 
 const Chat = () => {
   const { roomId } = useParams();
   const [roomDetails, setRoomDetails] = useState('');
-  const [roomMessages, setRoomMessages] = useState('');
+  const [roomMessages, setRoomMessages] = useState([]);
 
   useEffect(() => {
     if(roomId) {
@@ -46,6 +47,14 @@ const Chat = () => {
       </div>
       <div className="chat__messages">
         {/* Loop through all the messages */}
+        {roomMessages.map(({ message, user, userImage, timestamp }) => (
+          <Message 
+          user={user} 
+          userImage={userImage} 
+          message={message}
+          timestamp={timestamp}
+          />
+        ))}
       </div>
 
     </div>
