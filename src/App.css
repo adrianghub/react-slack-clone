@@ -4,3 +4,8 @@
   --slack-color-hover: #340e34;
   --slack-border-color: #49274b;
 }
+
+.app__body {
+  display: flex;
+  height: 100vh;
+}

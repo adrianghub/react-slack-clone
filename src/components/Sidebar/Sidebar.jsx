@@ -36,7 +36,7 @@ const Sidebar = () => {
           <h2>Slack CEO</h2>
           <h3>
             <FiberManualRecordIcon className="sidebar__greenDot" />
-            Drianko Drianko
+            Drianko
           </h3>
         </div>
         <CreateIcon />
